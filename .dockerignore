@@ -1,0 +1,4 @@
+# Don't copy these into the docker container context
+goapp
+resin-sync.yml
+.gitignore
