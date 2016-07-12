@@ -1,4 +1,4 @@
 # Don't copy these into the docker container context
-goapp
+goapp.o
 resin-sync.yml
 .gitignore

@@ -1,4 +1,4 @@
 #Don't commit the cross-compiled go binary
-goapp
+goapp.o
 README.md
 resin-sync.yml

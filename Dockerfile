@@ -3,7 +3,7 @@ ENV VERSION=0.0.1
 ENV GOBIN=/usr/src/app
 WORKDIR $GOPATH
 COPY . ./
-RUN go install github.com/shaunmulligan/goapp
+RUN go build -o goapp.o github.com/shaunmulligan/goapp 
 ENV INITSYSTEM=on
 WORKDIR /usr/src/app/
-CMD ["./goapp"]
+CMD ["./goapp.o"]
