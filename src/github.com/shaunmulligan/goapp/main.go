@@ -1,18 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "html"
+    "log"
+    "net/http"
+
+    "github.com/gorilla/mux"
 )
 
-func say(s string) {
-	for i := 0; i < 5; i++ {
-		time.Sleep(100 * time.Millisecond)
-		fmt.Println(s)
-	}
+func main() {
+    fmt.Println("Yay our golang server is running on port :80...")
+    router := mux.NewRouter().StrictSlash(true)
+    router.HandleFunc("/", Index)
+    log.Fatal(http.ListenAndServe(":80", router))
 }
 
-func main() {
-	go say("world")
-	say("hello")
+func Index(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 }
