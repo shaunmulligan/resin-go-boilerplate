@@ -1,0 +1,11 @@
+source: .
+before: 'GOPATH=$PWD GOOS=linux GOARCH=arm go build -v -o goapp.o github.com/shaunmulligan/goapp '
+ignore:
+    - .git
+    - Dockerfile
+    - resin-sync.yml
+    - src/
+    - .gitignore
+    - README.md
+progress: true
+watch: false
